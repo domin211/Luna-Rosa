@@ -85,9 +85,9 @@ const TopLanePage: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl"></div>
                 </div>
                 <p className="text-red-200 text-lg leading-relaxed">
-                  Blood Moon Talon je jeden z najobľúbenejších skinov pre tohto championa. 
-                  Kombinuje tradičnú japonskú estetiku s temnou, mystickou atmosférou. 
-                  Tento skin dokonale reprezentuje Maxov agresívny a precízny herný štýl.
+Blood Moon Talon je jedním z nejpopulárnějších skinů pro tohoto šampiona.
+Kombinuje tradiční japonskou estetiku s temnou, mystickou atmosférou.
+Tento skin dokonale vystihuje Maxův agresivní a precizní styl hry.
                 </p>
               </div>
             </div>
