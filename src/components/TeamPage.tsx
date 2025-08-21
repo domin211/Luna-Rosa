@@ -60,7 +60,7 @@ const TeamPage: React.FC = () => {
       role: 'Manager',
       champion: 'Syndra',
       skin: 'The Dark Sovereign',
-      opgg: 'https://op.gg/lol/summoners/eune/DE5PAIR-EUNE',
+      opgg: 'https://op.gg/lol/summoners/eune/2dominik2-EUNE',
       championImage: 'https://ddragon.leagueoflegends.com/cdn/14.1.1/img/champion/Syndra.png'
     }
   ];
