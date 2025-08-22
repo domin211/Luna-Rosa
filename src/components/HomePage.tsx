@@ -159,7 +159,7 @@ const HomePage: React.FC = () => {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
               <MapPin className="w-12 h-12 mx-auto mb-4 text-pink-200" />
               <h3 className="text-xl font-bold mb-2">Adresa</h3>
-              <p className="text-pink-100">Praha, Česká republika</p>
+              <p className="text-pink-100">Brno, Česká republika</p>
             </div>
           </div>
         </div>
