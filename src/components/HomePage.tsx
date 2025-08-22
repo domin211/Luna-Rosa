@@ -149,12 +149,12 @@ const HomePage: React.FC = () => {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
               <Mail className="w-12 h-12 mx-auto mb-4 text-pink-200" />
               <h3 className="text-xl font-bold mb-2">Email</h3>
-              <p className="text-pink-100">info@lunarosa.cz</p>
+              <p className="text-pink-100">lunarosagaming@gmail.com</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
               <Phone className="w-12 h-12 mx-auto mb-4 text-pink-200" />
               <h3 className="text-xl font-bold mb-2">Telefon</h3>
-              <p className="text-pink-100">+420 123 456 789</p>
+              <p className="text-pink-100">0944 821 978</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
               <MapPin className="w-12 h-12 mx-auto mb-4 text-pink-200" />
