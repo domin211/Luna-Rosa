@@ -108,7 +108,7 @@ const SupportPage: React.FC = () => {
                 <h2 className="text-3xl font-bold text-white mb-6">IG Rakan</h2>
                 <div className="relative mb-6">
                   <img 
-                    src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rakan_8.jpg"
+                    src="https://raw.githubusercontent.com/boxerko/lunarosafotky/refs/heads/main/rakan.jpg"
                     alt="IG Rakan"
                     className="w-full h-80 object-cover rounded-xl shadow-lg"
                   />
