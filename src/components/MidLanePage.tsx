@@ -108,7 +108,7 @@ const MidLanePage: React.FC = () => {
                 <h2 className="text-3xl font-bold text-white mb-6">Battle Queen Qiyana</h2>
                 <div className="relative mb-6">
                   <img 
-                    src="/qiyana.jpg"
+                    src="https://raw.githubusercontent.com/boxerko/lunarosafotky/refs/heads/main/qiyana.png"
                     alt="Battle Queen Qiyana"
                     className="w-full h-80 object-cover rounded-xl shadow-lg"
                   />
