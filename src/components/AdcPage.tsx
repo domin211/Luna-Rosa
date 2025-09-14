@@ -108,7 +108,7 @@ const AdcPage: React.FC = () => {
                 <h2 className="text-3xl font-bold text-white mb-6">Gladiator Draven</h2>
                 <div className="relative mb-6">
                   <img 
-                    src="public/draven.jpg"
+                    src="https://raw.githubusercontent.com/boxerko/lunarosafotky/refs/heads/main/draven.jpg"
                     alt="Gladiator Draven"
                     className="w-full h-80 object-cover rounded-xl shadow-lg"
                   />
