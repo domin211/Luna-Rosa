@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../contexts/ThemeContext';
 
 const JunglePage: React.FC = () => {
+  const { isDarkMode, toggleDarkMode } = useTheme();
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-100">
+    <div className={`min-h-screen transition-colors duration-300 ${
+      isDarkMode 
+        ? 'bg-gradient-to-br from-gray-800 via-gray-700 to-gray-600' 
+        : 'bg-gradient-to-br from-slate-50 via-white to-blue-100'
+    }`}>
       {/* Header */}
-      <header className="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+      <header className={`${
+        isDarkMode ? 'bg-gray-800/95' : 'bg-white/95'
+      } backdrop-blur-sm shadow-lg sticky top-0 z-50`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <nav className="flex items-center justify-between">
             <Link to="/team" className="flex items-center space-x-4 hover:opacity-80 transition-opacity">
@@ -25,6 +34,16 @@ const JunglePage: React.FC = () => {
                 </div>
               </div>
             </Link>
+            <button
+              onClick={toggleDarkMode}
+              className={`p-2 rounded-full transition-colors ${
+                isDarkMode 
+                  ? 'bg-gray-700 text-yellow-400 hover:bg-gray-600' 
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              }`}
+            >
+              {isDarkMode ? '☀️' : '🌙'}
+            </button>
           </nav>
         </div>
       </header>
@@ -43,15 +62,27 @@ const JunglePage: React.FC = () => {
                 <p className="text-xl text-blue-600 font-semibold">Kindred Main</p>
               </div>
 
-              <div className="bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 shadow-xl border border-slate-200 mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">O hráčovi</h2>
-                <p className="text-gray-700 leading-relaxed mb-4">
+              <div className={`${
+                isDarkMode 
+                  ? 'bg-gradient-to-br from-gray-700 to-gray-600 border-gray-500' 
+                  : 'bg-gradient-to-br from-white to-slate-50 border-slate-200'
+              } rounded-2xl p-8 shadow-xl border mb-8`}>
+                <h2 className={`text-2xl font-bold ${
+                  isDarkMode ? 'text-gray-100' : 'text-gray-900'
+                } mb-4`}>O hráčovi</h2>
+                <p className={`${
+                  isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                } leading-relaxed mb-4`}>
                   Viky je zkušený jungle main, který se vyznačuje precizní map kontrolou a výjimečným citem pro tempo hry.
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-4">
+                <p className={`${
+                  isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                } leading-relaxed mb-4`}>
                   Díky svému agresivnímu hernímu stylu a perfektnímu využívání šampiona Kindred dokáže neustále vyvíjet tlak na soupeře a získávat klíčové výhody pro svůj tým. Jeho schopnost číst hru a rozhodovat se ve vypjatých situacích z něj dělá jednoho z nejdůležitějších hráčů sestavy.
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <p className={`${
+                  isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                } leading-relaxed`}>
 Viky je známý svou konzistencí a flexibilitou – dokáže se přizpůsobit různým herním podmínkám, ať už jde o early game invady nebo late game teamfighty. To z něj dělá spolehlivého junglera, na kterého se jeho tým může vždy spolehnout.
                 </p>
               </div>
@@ -75,7 +106,7 @@ Viky je známý svou konzistencí a flexibilitou – dokáže se přizpůsobit r
                 <h2 className="text-3xl font-bold text-white mb-6">DRX Kindred</h2>
                 <div className="relative mb-6">
                   <img 
-            src="https://raw.githubusercontent.com/targoncup/lunarosa/refs/heads/main/kindred_splash_centered_23.jpg"
+            src="public/kindred_splash_centered_23.jpg"
                     alt="DRX Kindred"
                     className="w-full h-80 object-cover rounded-xl shadow-lg"
                   />

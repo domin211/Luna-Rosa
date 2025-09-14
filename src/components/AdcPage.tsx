@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../contexts/ThemeContext';
 
 const AdcPage: React.FC = () => {
+  const { isDarkMode, toggleDarkMode } = useTheme();
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-rose-100">
+    <div className={`min-h-screen transition-colors duration-300 ${
+      isDarkMode 
+        ? 'bg-gradient-to-br from-gray-800 via-gray-700 to-gray-600' 
+        : 'bg-gradient-to-br from-pink-50 via-white to-rose-100'
+    }`}>
       {/* Header */}
-      <header className="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+      <header className={`${
+        isDarkMode ? 'bg-gray-800/95' : 'bg-white/95'
+      } backdrop-blur-sm shadow-lg sticky top-0 z-50`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <nav className="flex items-center justify-between">
             <Link to="/team" className="flex items-center space-x-4 hover:opacity-80 transition-opacity">
@@ -25,6 +34,16 @@ const AdcPage: React.FC = () => {
                 </div>
               </div>
             </Link>
+            <button
+              onClick={toggleDarkMode}
+              className={`p-2 rounded-full transition-colors ${
+                isDarkMode 
+                  ? 'bg-gray-700 text-yellow-400 hover:bg-gray-600' 
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              }`}
+            >
+              {isDarkMode ? '☀️' : '🌙'}
+            </button>
           </nav>
         </div>
       </header>
@@ -43,16 +62,28 @@ const AdcPage: React.FC = () => {
                 <p className="text-xl text-pink-600 font-semibold">Draven Main</p>
               </div>
 
-              <div className="bg-gradient-to-br from-white to-pink-50 rounded-2xl p-8 shadow-xl border border-pink-100 mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">O hráči</h2>
-                <p className="text-gray-700 leading-relaxed mb-4">
+              <div className={`${
+                isDarkMode 
+                  ? 'bg-gradient-to-br from-gray-700 to-gray-600 border-gray-500' 
+                  : 'bg-gradient-to-br from-white to-pink-50 border-pink-100'
+              } rounded-2xl p-8 shadow-xl border mb-8`}>
+                <h2 className={`text-2xl font-bold ${
+                  isDarkMode ? 'text-gray-100' : 'text-gray-900'
+                } mb-4`}>O hráči</h2>
+                <p className={`${
+                  isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                } leading-relaxed mb-4`}>
                   Ernie je zkušený ADC hráč s výjimečnými mechanickými dovednostmi a agresivním herním stylem.
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-4">
+                <p className={`${
+                  isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                } leading-relaxed mb-4`}>
                   Jeho specializace na Dravena mu umožňuje dominovat v bot lane díky vysokému damage outputu a schopnosti 
                   snowballovat výhody. Ernie dokáže perfektně využít Dravenovy sekery k vytvoření obrovského tlaku na soupeře.
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <p className={`${
+                  isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                } leading-relaxed`}>
                   Díky své preciznosti a agresivnímu přístupu dokáže Ernie konzistentně carry teamfighty 
                   a být spolehlivým zdrojem damage pro Luna Rosa tým.
                 </p>
@@ -77,13 +108,15 @@ const AdcPage: React.FC = () => {
                 <h2 className="text-3xl font-bold text-white mb-6">Gladiator Draven</h2>
                 <div className="relative mb-6">
                   <img 
-                    src="https://raw.githubusercontent.com/targoncup/lunarosa/refs/heads/main/draven.jpg"
+                    src="public/draven.jpg"
                     alt="Gladiator Draven"
                     className="w-full h-80 object-cover rounded-xl shadow-lg"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl"></div>
                 </div>
-                <p className="text-orange-200 text-lg leading-relaxed">
+                <p className={`${
+                  isDarkMode ? 'text-orange-300' : 'text-orange-200'
+                } text-lg leading-relaxed`}>
                   Gladiator Draven je klasický skin, který dokonale vystihuje Dravenovu arogantní a dominantní povahu. 
                   Tento skin reprezentuje Ernieho agresivní a sebevědomý herní styl v bot lane, 
                   kde dokáže ukázat svou sílu a dominanci nad soupeři.

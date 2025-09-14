@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../contexts/ThemeContext';
 
 const ManagerPage: React.FC = () => {
+  const { isDarkMode, toggleDarkMode } = useTheme();
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-rose-100">
+    <div className={`min-h-screen transition-colors duration-300 ${
+      isDarkMode 
+        ? 'bg-gradient-to-br from-gray-800 via-gray-700 to-gray-600' 
+        : 'bg-gradient-to-br from-pink-50 via-white to-rose-100'
+    }`}>
       {/* Header */}
-      <header className="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+      <header className={`${
+        isDarkMode ? 'bg-gray-800/95' : 'bg-white/95'
+      } backdrop-blur-sm shadow-lg sticky top-0 z-50`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <nav className="flex items-center justify-between">
             <Link to="/team" className="flex items-center space-x-4 hover:opacity-80 transition-opacity">
@@ -25,6 +34,16 @@ const ManagerPage: React.FC = () => {
                 </div>
               </div>
             </Link>
+            <button
+              onClick={toggleDarkMode}
+              className={`p-2 rounded-full transition-colors ${
+                isDarkMode 
+                  ? 'bg-gray-700 text-yellow-400 hover:bg-gray-600' 
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              }`}
+            >
+              {isDarkMode ? '☀️' : '🌙'}
+            </button>
           </nav>
         </div>
       </header>
@@ -43,17 +62,29 @@ const ManagerPage: React.FC = () => {
                 <p className="text-xl text-pink-600 font-semibold">Týmový líder</p>
               </div>
 
-              <div className="bg-gradient-to-br from-white to-pink-50 rounded-2xl p-8 shadow-xl border border-pink-100 mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">O manažerovi</h2>
-                <p className="text-gray-700 leading-relaxed mb-4">
+              <div className={`${
+                isDarkMode 
+                  ? 'bg-gradient-to-br from-gray-700 to-gray-600 border-gray-500' 
+                  : 'bg-gradient-to-br from-white to-pink-50 border-pink-100'
+              } rounded-2xl p-8 shadow-xl border mb-8`}>
+                <h2 className={`text-2xl font-bold ${
+                  isDarkMode ? 'text-gray-100' : 'text-gray-900'
+                } mb-4`}>O manažerovi</h2>
+                <p className={`${
+                  isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                } leading-relaxed mb-4`}>
                   Asvu je zkušený manažer s výjimečnými organizačními schopnostmi a strategickým myšlením.
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-4">
+                <p className={`${
+                  isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                } leading-relaxed mb-4`}>
                   Díky svému přístupu k vedení týmu dokáže koordinovat všechny aspekty týmové práce - od plánování tréninků 
                   až po přípravu na turnaje. Jeho schopnost motivovat hráče a vytvářet pozitivní týmovou atmosféru 
                   je klíčová pro úspěch Luna Rosa týmu.
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <p className={`${
+                  isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                } leading-relaxed`}>
                   Asvu se specializuje na analýzu soupeřů, strategické plánování a komunikaci s organizátory turnajů. 
                   Jeho manažerské dovednosti zajišťují, že se tým může plně soustředit na hru, zatímco on řeší veškeré 
                   administrativní a organizační záležitosti.
@@ -79,13 +110,15 @@ const ManagerPage: React.FC = () => {
                 <h2 className="text-3xl font-bold text-white mb-6">Pool Party Syndra</h2>
                 <div className="relative mb-6">
                   <img 
-                    src="https://raw.githubusercontent.com/targoncup/lunarosa/refs/heads/main/syndra.jpg"
+                    src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Syndra_6.jpg"
                     alt="Pool Party Syndra"
                     className="w-full h-80 object-cover rounded-xl shadow-lg"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl"></div>
                 </div>
-                <p className="text-cyan-200 text-lg leading-relaxed">
+                <p className={`${
+                  isDarkMode ? 'text-cyan-300' : 'text-cyan-200'
+                } text-lg leading-relaxed`}>
                   Pool Party Syndra reprezentuje Asvuův relaxovaný, ale efektivní přístup k managementu. 
                   Stejně jako tento letní skin přináší svěžest do hry, Asvu přináší pozitivní energii a inovativní 
                   přístupy do týmového vedení, čímž vytváří příjemné prostředí pro všechny členy týmu.

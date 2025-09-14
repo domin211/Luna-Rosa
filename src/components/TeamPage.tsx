@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useTheme } from '../contexts/ThemeContext';
 
 interface Player {
   name: string;
@@ -13,6 +14,7 @@ interface Player {
 
 const TeamPage: React.FC = () => {
   const navigate = useNavigate();
+  const { isDarkMode, toggleDarkMode } = useTheme();
 
   const players: Player[] = [
     {
@@ -60,7 +62,7 @@ const TeamPage: React.FC = () => {
       role: 'Manager',
       champion: 'Syndra',
       skin: 'The Dark Sovereign',
-      opgg: 'https://op.gg/lol/summoners/eune/2dominik2-EUNE',
+      opgg: 'https://op.gg/lol/summoners/eune/DE5PAIR-EUNE',
       championImage: 'https://ddragon.leagueoflegends.com/cdn/14.1.1/img/champion/Syndra.png'
     }
   ];
@@ -82,9 +84,15 @@ const TeamPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-rose-100">
+    <div className={`min-h-screen transition-colors duration-300 ${
+      isDarkMode 
+        ? 'bg-gradient-to-br from-gray-800 via-gray-700 to-gray-600' 
+        : 'bg-gradient-to-br from-pink-50 via-white to-rose-100'
+    }`}>
       {/* Header */}
-      <header className="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+      <header className={`${
+        isDarkMode ? 'bg-gray-800/95' : 'bg-white/95'
+      } backdrop-blur-sm shadow-lg sticky top-0 z-50`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <nav className="flex items-center justify-between">
             <Link to="/" className="flex items-center space-x-4 hover:opacity-80 transition-opacity">
@@ -103,6 +111,16 @@ const TeamPage: React.FC = () => {
                 </div>
               </div>
             </Link>
+            <button
+              onClick={toggleDarkMode}
+              className={`p-2 rounded-full transition-colors ${
+                isDarkMode 
+                  ? 'bg-gray-700 text-yellow-400 hover:bg-gray-600' 
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              }`}
+            >
+              {isDarkMode ? '☀️' : '🌙'}
+            </button>
           </nav>
         </div>
       </header>
@@ -117,6 +135,11 @@ const TeamPage: React.FC = () => {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Náš profesionální tým hráčů League of Legends
             </p>
+            <p className={`text-xl ${
+              isDarkMode ? 'text-gray-400' : 'text-gray-600'
+            } max-w-3xl mx-auto`}>
+              Náš profesionální tým hráčů League of Legends
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -124,7 +147,11 @@ const TeamPage: React.FC = () => {
               <div 
                 key={index}
                 className={`bg-gradient-to-br from-white to-pink-50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-pink-100 group ${(player.name === 'Max' || player.name === 'Viky' || player.name === 'Chris' || player.name === 'Ernie' || player.name === 'Mari') ? 'cursor-pointer' : ''}`}
-                className={`bg-gradient-to-br from-white to-pink-50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-pink-100 group ${(player.name === 'Max' || player.name === 'Viky' || player.name === 'Chris' || player.name === 'Ernie' || player.name === 'Mari' || player.name === 'Asvu') ? 'cursor-pointer' : ''}`}
+                className={`${
+                  isDarkMode 
+                    ? 'bg-gradient-to-br from-gray-700 to-gray-600 border-gray-500' 
+                    : 'bg-gradient-to-br from-white to-pink-50 border-pink-100'
+                } rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border group ${(player.name === 'Max' || player.name === 'Viky' || player.name === 'Chris' || player.name === 'Ernie' || player.name === 'Mari' || player.name === 'Asvu') ? 'cursor-pointer' : ''}`}
                 onClick={() => handlePlayerClick(player.name)}
               >
                 <div className="text-center">
@@ -141,9 +168,13 @@ const TeamPage: React.FC = () => {
                   </div>
 
                   {/* Player Info */}
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{player.name}</h3>
+                  <h3 className={`text-2xl font-bold ${
+                    isDarkMode ? 'text-gray-100' : 'text-gray-900'
+                  } mb-2`}>{player.name}</h3>
                   <p className="text-lg font-semibold text-pink-600 mb-2">{player.champion}</p>
-                  <p className="text-sm text-gray-600 mb-6">{player.skin}</p>
+                  <p className={`text-sm ${
+                    isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                  } mb-6`}>{player.skin}</p>
 
                   {/* OP.GG Link */}
                   <a 
@@ -164,7 +195,7 @@ const TeamPage: React.FC = () => {
           <div className="mt-20 bg-gradient-to-r from-pink-600 to-rose-500 rounded-2xl p-8 text-white text-center">
             <h2 className="text-3xl font-bold mb-4">Týmové úspechy</h2>
             <p className="text-xl text-pink-100 mb-6">
-             Náš tým se účastní prestižních turnajů, jako je Targon Cup, AOL a dalších soutěží.
+              Náš tým súťaží v prestížnych turnajoch ako Targon Cup, AOL a ďalších soutěžích
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
