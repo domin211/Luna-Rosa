@@ -133,7 +133,6 @@ const TeamPage: React.FC = () => {
               League of Legends Team
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Náš profesionální tým hráčů League of Legends
             </p>
             <p className={`text-xl ${
               isDarkMode ? 'text-gray-400' : 'text-gray-600'
@@ -195,7 +194,7 @@ const TeamPage: React.FC = () => {
           <div className="mt-20 bg-gradient-to-r from-pink-600 to-rose-500 rounded-2xl p-8 text-white text-center">
             <h2 className="text-3xl font-bold mb-4">Týmové úspechy</h2>
             <p className="text-xl text-pink-100 mb-6">
-              Náš tým súťaží v prestížnych turnajoch ako Targon Cup, AOL a ďalších soutěžích
+              Náš tým se účastní prestižních turnajů, jako je Targon Cup, AOL a dalších soutěží.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
