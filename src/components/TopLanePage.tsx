@@ -78,15 +78,15 @@ const TopLanePage: React.FC = () => {
                 <p className={`${
                   isDarkMode ? 'text-gray-300' : 'text-gray-700'
                 } leading-relaxed mb-4`}>
-                  Vďaka svojej precíznosti a strategickému mysleniu dokáže dosiahnuť až Grandmaster tier. 
-                  Jeho agresívny štýl hry a schopnosť robiť správne rozhodnutia v kritických momentoch 
-                  z neho robia kľúčového hráča nášho tímu.
+Max je zkušený hráč na horní linii s výjimečnými schopnostmi v agresivním stylu hry.
+
+Díky své přesnosti a strategickému myšlení může dosáhnout úrovně Grandmaster. Jeho agresivní styl hry a schopnost činit správná rozhodnutí v kritických momentech z něj dělají klíčového hráče našeho týmu.
                 </p>
                 <p className={`${
                   isDarkMode ? 'text-gray-300' : 'text-gray-700'
                 } leading-relaxed`}>
-                  Max je známy svojou konzistentnosťou a schopnosťou adaptovať sa na rôzne herné situácie, 
-                  čo z neho robí spoľahlivého carry hráča pre Luna Rosa tím.
+
+Max je známý svou konzistentností a schopností přizpůsobit se různým herním situacím, což z něj dělá spolehlivého hráče týmu Luna Rosa.
                 </p>
               </div>
 
@@ -116,9 +116,8 @@ const TopLanePage: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl"></div>
                 </div>
                 <p className="text-red-200 text-lg leading-relaxed">
-                  Blood Moon Talon je jeden z najobľúbenejších skinov pre tohto championa. 
-                  Kombinuje tradičnú japonskú estetiku s temnou, mystickou atmosférou. 
-                  Tento skin dokonale reprezentuje Maxov agresívny a precízny herný štýl.
+Blood Moon Talon je jedním z nejpopulárnějších skinů pro tohoto šampiona. Kombinuje tradiční japonskou estetiku s temnou, mystickou atmosférou. Tento skin dokonale vystihuje Maxův agresivní a precizní styl hry.
+
                 </p>
               </div>
             </div>
