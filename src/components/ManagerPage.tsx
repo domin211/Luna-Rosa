@@ -107,10 +107,10 @@ const ManagerPage: React.FC = () => {
             {/* Right side - Pool Party Syndra skin */}
             <div className="text-center">
               <div className="bg-gradient-to-br from-blue-900 to-cyan-900 rounded-2xl p-8 shadow-2xl border-4 border-cyan-500/30">
-                <h2 className="text-3xl font-bold text-white mb-6">Pool Party Syndra</h2>
+                <h2 className="text-3xl font-bold text-white mb-6">Spirit Blossom Syndra</h2>
                 <div className="relative mb-6">
                   <img 
-                    src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Syndra_6.jpg"
+                    src="https://raw.githubusercontent.com/boxerko/lunarosafotky/refs/heads/main/1000.png"
                     alt="Pool Party Syndra"
                     className="w-full h-80 object-cover rounded-xl shadow-lg"
                   />
@@ -119,7 +119,7 @@ const ManagerPage: React.FC = () => {
                 <p className={`${
                   isDarkMode ? 'text-cyan-300' : 'text-cyan-200'
                 } text-lg leading-relaxed`}>
-                  Pool Party Syndra reprezentuje Asvuův relaxovaný, ale efektivní přístup k managementu. 
+                  Spirit Blossom Syndra reprezentuje Asvuův relaxovaný, ale efektivní přístup k managementu. 
                   Stejně jako tento letní skin přináší svěžest do hry, Asvu přináší pozitivní energii a inovativní 
                   přístupy do týmového vedení, čímž vytváří příjemné prostředí pro všechny členy týmu.
                 </p>
