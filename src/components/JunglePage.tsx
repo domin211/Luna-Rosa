@@ -106,7 +106,7 @@ Viky je známý svou konzistencí a flexibilitou – dokáže se přizpůsobit r
                 <h2 className="text-3xl font-bold text-white mb-6">DRX Kindred</h2>
                 <div className="relative mb-6">
                   <img 
-            src="public/kindred_splash_centered_23.jpg"
+            src="https://raw.githubusercontent.com/boxerko/lunarosafotky/refs/heads/main/kindred_splash_centered_23.jpg"
                     alt="DRX Kindred"
                     className="w-full h-80 object-cover rounded-xl shadow-lg"
                   />
